@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=0, maximum-scale=1, minimum-scale=1"
+    />
+    <title>Personal Workout Tracker</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Workout Tracker App</h1>
+      <div>
+        <h2>Live Workout</h2>
+        <div id="addExercise">
+          <!-- <select name="exerciseSelect" id="exerciseSelect" required>
+              <option value="" disabled selected>Exercise</option>
+              <option value="squats">Squats</option>
+              <option value="deadlifts">Deadlifts</option>
+              <option value="benchPress">Bench Press</option>
+            </select> -->
+          <input
+            type="text"
+            placeholder="Exercise"
+            id="currentExercise"
+            required
+          />
+          <input
+            type="number"
+            placeholder="Weight (kg)"
+            id="currentWeight"
+            required
+          />
+          <button id="addCurrentExercise" value="addCurrent">Add</button>
+        </div>
+        <table id="currentWorkoutTable" class="currentWorkoutTable">
+          <tbody>
+            <!-- table body will be dinamically updated -->
+          </tbody>
+        </table>
+        <button id="submitCurrentWorkout"></button>
+      </div>
+      <div>
+        <h2>Past Workout</h2>
+        <div id="pastWorkoutsDisplay"></div>
+      </div>
+      <div><h2>Stats Dashboard Coming Soon</h2></div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
