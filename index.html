@@ -18,45 +18,50 @@
   <body>
     <div class="container">
       <h1>Workout Tracker App</h1>
-      <div>
-        <h2>Live Workout</h2>
-        <div id="addExercise" class="addExercise">
-          <!-- <select name="exerciseSelect" id="exerciseSelect" required>
+      <div class="workoutSection">
+        <div>
+          <h2>Live Workout</h2>
+          <div id="addExercise" class="addExercise">
+            <!-- <select name="exerciseSelect" id="exerciseSelect" required>
               <option value="" disabled selected>Exercise</option>
               <option value="squats">Squats</option>
               <option value="deadlifts">Deadlifts</option>
               <option value="benchPress">Bench Press</option>
             </select> -->
-          <input
-            type="text"
-            placeholder="Exercise"
-            id="currentExercise"
-            required
-          />
-          <input
-            type="number"
-            placeholder="Weight (kg)"
-            id="currentWeight"
-            required
-          />
+            <input
+              type="text"
+              placeholder="Exercise"
+              id="currentExercise"
+              required
+            />
+            <input
+              type="number"
+              placeholder="Weight (kg)"
+              id="currentWeight"
+              required
+            />
+            <button
+              id="addCurrentExercise"
+              value="addCurrent"
+              class="addCurrentExercise"
+            >
+              Add
+            </button>
+          </div>
+          <table id="currentWorkoutTable" class="currentWorkoutTable">
+            <tbody>
+              <!-- table body will be dinamically updated -->
+            </tbody>
+          </table>
           <button
-            id="addCurrentExercise"
-            value="addCurrent"
-            class="addCurrentExercise"
-          >
-            Add
-          </button>
+            id="submitCurrentWorkout"
+            class="submitCurrentWorkout"
+          ></button>
         </div>
-        <table id="currentWorkoutTable" class="currentWorkoutTable">
-          <tbody>
-            <!-- table body will be dinamically updated -->
-          </tbody>
-        </table>
-        <button id="submitCurrentWorkout" class="submitCurrentWorkout"></button>
-      </div>
-      <div>
-        <h2>Past Workout</h2>
-        <div id="pastWorkoutsDisplay" class="pastWorkoutsDisplay"></div>
+        <div>
+          <h2>Past Workout</h2>
+          <div id="pastWorkoutsDisplay" class="pastWorkoutsDisplay"></div>
+        </div>
       </div>
       <div><h2>Stats Dashboard Coming Soon</h2></div>
     </div>

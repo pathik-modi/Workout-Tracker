@@ -50,12 +50,24 @@ function updateCurrentWorkoutTable() {
       // Insert cells for exercise and weight
       const cellExercise = row.insertCell(0)
       const cellWeight = row.insertCell(1)
-
-      // const removeExercise = row.insertCell(2) //add one more cell to delete exercise
-      // removeExercise.textContent = 'x' //test for the x button
+      const removeExercise = row.insertCell(2) //add one more cell to delete exercise
 
       cellExercise.textContent = exercise
       cellWeight.textContent = weight
+
+      //creates a button as the third cell in the exercise object table
+      const removeRowButton = document.createElement('button')
+      removeRowButton.classList.add('deleteExerciseRow')
+      removeRowButton.setAttribute('id', 'deleteExerciseRow')
+      removeRowButton.innerHTML = 'x'
+      removeRowButton.onclick = removeExerciseRow
+      function removeExerciseRow() {
+        delete exercise
+        delete weight
+        row.remove() //removes the content in the table
+      }
+      removeExercise.appendChild(removeRowButton)
+
       submitCurrentWorkout.innerHTML = 'Finish Workout' //only show finish workout button when there is something in the live workout table
     }
   }
