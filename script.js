@@ -32,7 +32,6 @@ function addToObject() {
   // adding values to object
   liveWorkout[`${currentExercise}`] = currentWeight
   updateCurrentWorkoutTable()
-  console.log(liveWorkout)
   //reset values back to default
   currentExerciseInput.value = ''
   currentWeightInput.value = ''
@@ -51,6 +50,10 @@ function updateCurrentWorkoutTable() {
       // Insert cells for exercise and weight
       const cellExercise = row.insertCell(0)
       const cellWeight = row.insertCell(1)
+
+      // const removeExercise = row.insertCell(2) //add one more cell to delete exercise
+      // removeExercise.textContent = 'x' //test for the x button
+
       cellExercise.textContent = exercise
       cellWeight.textContent = weight
       submitCurrentWorkout.innerHTML = 'Finish Workout' //only show finish workout button when there is something in the live workout table
