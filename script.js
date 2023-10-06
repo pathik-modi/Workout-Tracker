@@ -57,16 +57,15 @@ function updateCurrentWorkoutTable() {
 
       //creates a button as the third cell in the exercise object table
       const removeRowButton = document.createElement('button')
-      removeRowButton.classList.add('deleteExerciseRow')
       removeRowButton.setAttribute('id', 'deleteExerciseRow')
       removeRowButton.innerHTML = 'x'
+      removeExercise.appendChild(removeRowButton)
+
       removeRowButton.onclick = removeExerciseRow
       function removeExerciseRow() {
-        delete exercise
-        delete weight
+        delete liveWorkout['exercise']
         row.remove() //removes the content in the table
       }
-      removeExercise.appendChild(removeRowButton)
 
       submitCurrentWorkout.innerHTML = 'Finish Workout' //only show finish workout button when there is something in the live workout table
     }

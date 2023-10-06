@@ -98,7 +98,7 @@ button {
   justify-content: space-around;
 }
 
-.deleteExerciseRow {
+#deleteExerciseRow {
   background-color: white;
   color: red;
   padding: 2px 2px;
