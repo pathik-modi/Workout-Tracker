@@ -26,3 +26,10 @@ td {
   padding: 2px;
   text-align: left;
 }
+
+.pastWorkoutsDisplay {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+}

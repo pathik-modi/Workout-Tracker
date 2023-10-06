@@ -15,7 +15,6 @@
 // ]
 // console.log(pastWorkouts)
 // ---Example for reference--- //
-
 // ---live workout section--- //
 let liveWorkout = {}
 
@@ -61,12 +60,42 @@ function updateCurrentWorkoutTable() {
 // Current workout to past workout
 let pastWorkouts = []
 
-const pastWorkoutDisplay = document.getElementById('pastWorkoutDisplay')
+const pastWorkoutDisplay = document.getElementById('pastWorkoutsDisplay')
 const submitCurrentWorkout = document.getElementById('submitCurrentWorkout')
 submitCurrentWorkout.onclick = submitLiveWorkout
 
+function displayPastWorkout() {
+  // clear existing content in the past workout section
+  pastWorkoutDisplay.innerHTML = ''
+  // go through past workouts
+  pastWorkouts.forEach((workout) => {
+    // create div in HTML for each past workout
+    const workoutDiv = document.createElement('div')
+    workoutDiv.classList.add('past-workout')
+
+    // add date to the div
+    const workoutDate = document.createElement('p')
+    workoutDate.textContent = `${workout.workoutDate.toDateString()}`
+    workoutDiv.appendChild(workoutDate)
+
+    // add exercise and weights to the div
+    for (const exercise in workout) {
+      if (exercise !== 'workoutDate') {
+        const exerciseElement = document.createElement('p')
+        exerciseElement.textContent = `${exercise}: ${workout[exercise]}`
+        workoutDiv.appendChild(exerciseElement)
+      }
+    }
+    pastWorkoutDisplay.appendChild(workoutDiv)
+  })
+}
+
 function submitLiveWorkout() {
+  liveWorkout.workoutDate = new Date()
   pastWorkouts.push(liveWorkout)
-  console.log(pastWorkouts)
+  displayPastWorkout()
   liveWorkout = {}
+  updateCurrentWorkoutTable()
+  displayPastWorkout()
+  console.log(pastWorkouts)
 }
