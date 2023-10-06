@@ -56,6 +56,8 @@ function updateCurrentWorkoutTable() {
       submitCurrentWorkout.innerHTML = 'Finish Workout' //only show finish workout button when there is something in the live workout table
     }
   }
+  const hasExercises = Object.keys(liveWorkout).length > 0 // check if there is an exercise in the live workout table
+  submitCurrentWorkout.style.display = hasExercises ? 'inline-block' : 'none' // hide finish button until sometihng is added
 }
 // Current workout to past workout
 let pastWorkouts = []

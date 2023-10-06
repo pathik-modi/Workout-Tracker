@@ -20,7 +20,7 @@
       <h1>Workout Tracker App</h1>
       <div>
         <h2>Live Workout</h2>
-        <div id="addExercise">
+        <div id="addExercise" class="addExercise">
           <!-- <select name="exerciseSelect" id="exerciseSelect" required>
               <option value="" disabled selected>Exercise</option>
               <option value="squats">Squats</option>
@@ -39,14 +39,20 @@
             id="currentWeight"
             required
           />
-          <button id="addCurrentExercise" value="addCurrent">Add</button>
+          <button
+            id="addCurrentExercise"
+            value="addCurrent"
+            class="addCurrentExercise"
+          >
+            Add
+          </button>
         </div>
         <table id="currentWorkoutTable" class="currentWorkoutTable">
           <tbody>
             <!-- table body will be dinamically updated -->
           </tbody>
         </table>
-        <button id="submitCurrentWorkout"></button>
+        <button id="submitCurrentWorkout" class="submitCurrentWorkout"></button>
       </div>
       <div>
         <h2>Past Workout</h2>
